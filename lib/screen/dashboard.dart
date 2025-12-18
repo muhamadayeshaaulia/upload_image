@@ -58,7 +58,11 @@ class _MyDashboardState extends State<MyDashboard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-    
+      appBar: AppBar(title: const Text('Dashboard')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: uploadImage,
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
