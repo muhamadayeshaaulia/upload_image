@@ -91,6 +91,15 @@ class _MyLoginState extends State<MyLogin> {
               Text(_error!, style: const TextStyle(color: Colors.red)),
               const SizedBox(height: 15),
             ],
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.blueAccent,
+              ),
+              onPressed: _isLoading ? null : _login,
+              child: _isLoading
+                  ? const CircularProgressIndicator()
+                  : const Text(style: TextStyle(color: Colors.black), 'Login'),
+            ),
           ],
         ),
       ),
