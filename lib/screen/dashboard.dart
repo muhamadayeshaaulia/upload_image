@@ -65,7 +65,20 @@ class _MyDashboardState extends State<MyDashboard> {
       ),
       body: files.isEmpty
           ? const Center(child: Text('Belum ada foto'))
-         
+          : GridView.builder(
+              padding: const EdgeInsets.all(10),
+              gridDelegate:
+                  const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+              ),
+              itemCount: files.length,
+              itemBuilder: (context, i) {
+                final name = files[i];
+               
+              },
+            ),
     );
   }
 }
