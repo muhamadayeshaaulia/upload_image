@@ -76,7 +76,19 @@ class _MyDashboardState extends State<MyDashboard> {
               itemCount: files.length,
               itemBuilder: (context, i) {
                 final name = files[i];
-               
+                return Stack(
+                  children: [
+                    Image.network(getUrl(name), fit: BoxFit.cover),
+                    Positioned(
+                      right: 0,
+                      top: 0,
+                      child: IconButton(
+                        icon: const Icon(Icons.delete, color: Colors.red),
+                        onPressed: () => deleteImage(name),
+                      ),
+                    ),
+                  ],
+                );
               },
             ),
     );
