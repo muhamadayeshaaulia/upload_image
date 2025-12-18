@@ -86,6 +86,11 @@ class _MyLoginState extends State<MyLogin> {
                 ),
               ),
             ),
+            const SizedBox(height: 15),
+            if (_error != null) ...[
+              Text(_error!, style: const TextStyle(color: Colors.red)),
+              const SizedBox(height: 15),
+            ],
           ],
         ),
       ),
