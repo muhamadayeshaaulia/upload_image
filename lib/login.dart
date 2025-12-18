@@ -1,11 +1,13 @@
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
 
-class MyLogin extends StatelessWidget {
+class MyLogin extends StatefulWidget {
   const MyLogin({super.key});
+
   @override
   State<MyLogin> createState() => _MyLoginState();
 }
+
 class _MyLoginState extends State<MyLogin> {
   final emailCtrl = TextEditingController();
   final passCtrl = TextEditingController();
@@ -51,9 +53,28 @@ class _MyLoginState extends State<MyLogin> {
       });
     }
   }
-}
 
-@override
-Widget build(BuildContext context) {
-  return Scaffold(body: const Center(child: Text('Welcome to the Login Page')));
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            TextField(
+              keyboardType: TextInputType.emailAddress,
+              controller: emailCtrl,
+              decoration: const InputDecoration(
+                labelText: 'Email',
+                prefixIcon: Icon(Icons.email),
+                hintText: 'Masukan email anda!',
+              ),
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
 }
