@@ -71,7 +71,21 @@ class _MyLoginState extends State<MyLogin> {
                 hintText: 'Masukan email anda!',
               ),
             ),
-
+            const SizedBox(height: 20),
+            TextField(
+              keyboardType: TextInputType.visiblePassword,
+              obscureText: true,
+              controller: passCtrl,
+              decoration: InputDecoration(
+                labelText: 'Password',
+                prefixIcon: Icon(Icons.lock),
+                hintText: 'Masukan Password anda!',
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.visibility_off_outlined),
+                  onPressed: () {},
+                ),
+              ),
+            ),
           ],
         ),
       ),
