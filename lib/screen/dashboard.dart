@@ -63,6 +63,9 @@ class _MyDashboardState extends State<MyDashboard> {
         onPressed: uploadImage,
         child: const Icon(Icons.add),
       ),
+      body: files.isEmpty
+          ? const Center(child: Text('Belum ada foto'))
+         
     );
   }
 }
