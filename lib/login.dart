@@ -1,7 +1,7 @@
 import 'package:belajar_upload/screen/dashboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'screen/dashboard.dart';
+
 class MyLogin extends StatefulWidget {
   const MyLogin({super.key});
 
