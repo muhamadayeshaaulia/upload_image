@@ -1,6 +1,7 @@
+import 'package:belajar_upload/screen/dashboard.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'screen/dashboard.dart';
 class MyLogin extends StatefulWidget {
   const MyLogin({super.key});
 
@@ -25,20 +26,12 @@ class _MyLoginState extends State<MyLogin> {
         password: passCtrl.text,
       );
       final user = credential.user;
-      if (!mounted) return;
-      showDialog(
-        context: context,
-        builder: (_) => AlertDialog(
-          title: const Text('Login Success'),
-          content: Text('UID ${user?.uid}\n Email: ${user?.email}'),
-          actions: [
-            TextButton(
-              onPressed: () => Navigator.pop(context),
-              child: const Text('OK'),
-            ),
-          ],
-        ),
-      );
+      if (user != null) {
+        Navigator.pushReplacement(
+          context,
+          MaterialPageRoute(builder: (context) => const MyDashboard()),
+        );
+      }
     } on FirebaseAuthException catch (e) {
       setState(() {
         _error = e.toString();
